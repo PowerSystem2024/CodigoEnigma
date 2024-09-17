@@ -41,3 +41,19 @@ console.log('Cambiamos y eliminamos un error: ')
 persona.apellido = 'Perez'
 delete persona.apellido
 console.log(persona)
+
+console.log('Distintas formas de imprimir un objeto: Forma 1 ')
+console.log(persona.nombre + ' ' + persona.apellido)
+
+console.log('Distintas formas de imprimir un objeto: Forma 2 ')
+for (nombrePropiedad in persona) {
+    console.log(persona[nombrePropiedad])
+}
+
+console.log('Distintas formas de imprimir un objeto: Forma 3 ')
+let personaArray = Object.values(persona)
+console.log(personaArray)
+
+console.log('Distintas formas de imprimir un objeto: Forma 4 ')
+let personaString = JSON.stringify(persona)
+console.log(personaString)
