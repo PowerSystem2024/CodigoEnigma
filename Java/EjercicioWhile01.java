@@ -1,4 +1,4 @@
-package Ciclo_while_for_break_continue_etiquetas;
+//package Ciclo_while_for_break_continue_etiquetas;
 
 public class EjercicioWhile01 {
     public static void main(String[] args) {

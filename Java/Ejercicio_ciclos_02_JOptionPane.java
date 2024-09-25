@@ -3,7 +3,7 @@
 El proceso se repetira hasta que se introduzca un cero 
 este esta echo en la clase JOPtionPane
 */
-package Ciclo_while_for_break_continue_etiquetas;
+//package Ciclo_while_for_break_continue_etiquetas;
 
 import javax.swing.JOptionPane;
 

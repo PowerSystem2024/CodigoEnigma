@@ -1,5 +1,5 @@
 //Ejercicio 1: leer un numero y mostrar su cuadrado , repetir el proceso hasta que se introduzca un numero negativo
-package Ciclo_while_for_break_continue_etiquetas;
+//package Ciclo_while_for_break_continue_etiquetas;
 
 import java.util.Scanner;
 
