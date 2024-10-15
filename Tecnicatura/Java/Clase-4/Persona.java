@@ -10,4 +10,3 @@ public class persona{
         System.out.println("Apellido: "+apellido);
     }
 }
-

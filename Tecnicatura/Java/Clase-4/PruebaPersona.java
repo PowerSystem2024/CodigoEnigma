@@ -16,4 +16,3 @@ public class PruebaPersona{
         persona2.obtenerInformacion();
     }
 }
-
