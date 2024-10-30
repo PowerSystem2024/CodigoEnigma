@@ -1,9 +1,11 @@
 <script setup>
-import { ref } from 'vue'
 import NavBar from './components/NavBar.vue'
 import DatosPersonales from './components/DatosPersonales.vue'
 import EducacionComponente from './components/EducacionComponente.vue'
 import ExperienciaComponente from './components/ExperienciaComponente.vue'
+import ProyectosComponente from './components/ProyectosComponente.vue'
+import HabilidadesComponente from './components/HabilidadesComponente.vue'
+import InteresesComponente from './components/InteresesComponente.vue'
 import FooterComponente from './components/FooterComponente.vue'
 </script>
 
@@ -25,14 +27,17 @@ import FooterComponente from './components/FooterComponente.vue'
 
     <section id="proyectos">
       <h2>Proyectos</h2>
+      <ProyectosComponente />
     </section>
 
     <section id="habilidades">
       <h2>Habilidades</h2>
+      <HabilidadesComponente />
     </section>
 
     <section id="intereses">
       <h2>Intereses</h2>
+      <InteresesComponente />
     </section>
   </main>
 
