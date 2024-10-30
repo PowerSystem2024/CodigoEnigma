@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 
 const fechaColor = ref([])
-fechaColor.value = [{ color: '#e0eafe53' }, { color: '#e0eafe53' }]
+fechaColor.value = [{ color: '#595d65' }, { color: '#595d65' }]
 
 const educacion = ref([
   {
@@ -17,7 +17,7 @@ const educacion = ref([
     title: 'Full Stack Developer',
     descripcion:
       'Desarrollo y mantenimiento de aplicaciones web, tanto en el frontend como en el backend, manejo de bases de datos, integración de APIs e implementación de sistemas de control de versiones.',
-      sitio: 'Platzi',
+    sitio: 'Platzi',
   },
 ])
 </script>
@@ -71,6 +71,8 @@ ul li {
   grid-row: span 2;
   display: grid;
   grid-template-rows: min-content min-content min-content;
+  border: 1px solid #595d65;
+  border-radius: 0.5rem;
 }
 
 ul li .fecha {
@@ -166,48 +168,36 @@ ul li .descripcion::before {
     grid-column: 2;
   }
   ul li:nth-child(odd) {
-    grid-column: 1; /* Coloca los ítems impares en la primera columna */
+    grid-column: 1;
   }
   ul li:nth-child(even) {
-    grid-column: 3; /* Coloca los ítems pares en la tercera columna */
+    grid-column: 3;
   }
 
-  /* Ajuste para que el segundo ítem abarque dos filas */
   ul li:nth-child(2) {
-    grid-row: 2/4; /* El segundo ítem ocupará desde la segunda hasta la cuarta fila */
+    grid-row: 2/4;
   }
 
-  /* Ajustes específicos para los ítems impares */
   ul li:nth-child(odd) .fecha::before {
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% 100%
-    ); /* Invierte el triángulo en los ítems impares */
-    left: 0; /* Alinea el triángulo a la izquierda */
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    left: 0;
   }
 
   ul li:nth-child(odd) .fecha::after {
-    transform: translate(
-      -50%,
-      -50%
-    ); /* Ajusta la posición del círculo en los ítems impares */
-    left: calc(
-      100% + var(--col-gap) + var(--line-w) / 2
-    ); /* Coloca el círculo a la derecha de la línea */
+    transform: translate(-50%, -50%);
+    left: calc(100% + var(--col-gap) + var(--line-w) / 2);
   }
 
   ul li:nth-child(odd) .fecha {
-    border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0; /* Ajusta los bordes redondeados para los ítems impares */
+    border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
   }
 }
 
-/* Estilo para los créditos */
 .credits {
-  margin-top: 1rem; /* Espaciado superior para los créditos */
-  text-align: right; /* Alinea el texto de los créditos a la derecha */
+  margin-top: 1rem;
+  text-align: right;
 }
 .credits a {
-  color: var(--color); /* Aplica el color de texto definido en la variable */
+  color: var(--color);
 }
 </style>
