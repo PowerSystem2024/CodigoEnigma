@@ -1,0 +1,25 @@
+<diagram program="umletino" version="15.1"><zoom_level>15</zoom_level><element><id>UMLClass</id><coordinates><x>240</x><y>165</y><w>225</w><h>90</h></coordinates><panel_attributes>&lt;&lt;FiguraGeometrica&gt;&gt;
+--
++anto
++ancho
+--
++get_alto()
++set_alto(alto)
++get_ancho()
++set_ancho(ancho)
++__Str__()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>465</y><w>225</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Cuadrados&gt;&gt;
+--
++area()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>690</x><y>105</y><w>225</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Color&gt;&gt;
+--
++color
++set_color(color)
++__str__()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>285</x><y>240</y><w>150</w><h>255</h></coordinates><panel_attributes>lt=&lt;-&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes><additional_attributes>10;10;50;150</additional_attributes></element><element><id>Relation</id><coordinates><x>345</x><y>180</y><w>525</w><h>315</h></coordinates><panel_attributes>lt=&lt;-&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes><additional_attributes>10;190;330;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>720</x><y>465</y><w>210</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Rectangulo&gt;&gt;
+--
++area()
++__str__()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>825</x><y>180</y><w>210</w><h>315</h></coordinates><panel_attributes>lt=&lt;.&gt;
+&lt;&lt;someStereotype&gt;&gt;</panel_attributes><additional_attributes>10;10;20;190</additional_attributes></element><element><id>Relation</id><coordinates><x>285</x><y>240</y><w>600</w><h>255</h></coordinates><panel_attributes>lt=&lt;-&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes><additional_attributes>10;10;380;150</additional_attributes></element></diagram>
