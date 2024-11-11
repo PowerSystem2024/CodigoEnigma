@@ -1,98 +1,108 @@
-<script setup>
-import { ref } from 'vue'
-const navegacion = ref([
-  { id: 1, nombre: 'Educación', enlace: '#educacion' },
-  { id: 2, nombre: 'Experiencia', enlace: '#experiencia' },
-  { id: 3, nombre: 'Proyectos', enlace: '#proyectos' },
-  { id: 4, nombre: 'Habilidades', enlace: '#habilidades' },
-  { id: 5, nombre: 'Intereses', enlace: '#intereses' },
-])
-</script>
-
 <template>
-  <header>
-    <p class="logo"><a href="./">&lt;Código Enigma/&gt;</a></p>
-
     <nav class="navbar">
-      <ul>
-        <li class="navbar-menu">
-          <a
-            v-for="nav in navegacion"
-            :key="nav.nombre"
-            :href="nav.enlace"
-            class="nav-item"
-            >{{ nav.nombre }}</a
-          >
-        </li>
-      </ul>
-    </nav>
-  </header>
+            <div class="navbar-menu">
+                <ul>
+<!--Se coloco el operador v-bind al atributo href utilizando su minima expreción el operador : / y se soluciono el enlace a las distintas secciones-->
+                    <a v-for="nav in navegacion" :key="nav.nombre" :href="nav.enlace" class="nav-item" >{{nav.nombre}}</a>  
+                </ul>
+            </div>
+        </nav>
 </template>
 
+<script setup>
+import { ref } from 'vue';
+const navegacion= ref([
+    {id:1, nombre:'Educación', enlace:'#educacion'},
+    {id:2, nombre:'Experiencia', enlace:'#experiencia'},
+    {id:3, nombre:'Proyectos', enlace:'#proyectos'},
+    {id:4, nombre:'Habilidades', enlace:'#habilidades'},
+    {id:5, nombre:'Intereses', enlace:'#intereses'}
+]);
+</script>
+
 <style scoped>
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 6.25rem;
-  background-color: var(--black-tertiary);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--white-tertiary);
-  position: fixed;  
-  top: 0;          
-  left: 0;    
-  width: 100%; 
-  z-index: 1000; 
+.navbar {
+    /* Establece el color de fondo usando una variable CSS */
+    color: #fff; /* Establece el color del texto en blanco */
+    align-items: center; /* Centra verticalmente los elementos dentro de la navbar */
+    width: 100%;
+    display: flex;
+    margin-top: 50px;
+
+
 }
 
 .navbar-item {
-  text-decoration: none;
+    color: #fff; /* Establece el color del texto en blanco */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    width: 100%;
+    
+
 }
 
 .navbar-menu {
-  display: flex;
-  flex-direction: row;
-  gap: 1.25rem;
-  justify-content: flex-end;
+    display: flex; /* Organiza los elementos en línea usando flexbox */
+    justify-content: space-between; /* Alinea los elementos al final de la navbar */
+    width: 100%;
+    
+    
+}
+.navbar-menu ul{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    
+    
 }
 
-.logo {
-  font-family: 'Roboto Mono', serif;
-  font-weight: 700;
-  color: var(--white-primary);
+ul a {
+    list-style: none; /* Elimina los puntos o números de las listas */
+    
+   
 }
 
-ul {
-  list-style: none;
+a {
+    border: 1px solid; /* Añade un borde sólido de 1px */
+    border-color: hsla(160, 100%, 37%, 0.2); /* Define el color del borde usando hsla */
+    border-color:#1C2934;
+    border-radius: 5px; /* Redondea las esquinas del borde */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    transition: 0.4s; /* Añade una transición suave de 0.4s para los cambios de estilo */
+    padding: 1em; /* Añade un padding de 5px alrededor del contenido */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #283618;
+
 }
 
-li a {
-  font-size: 0.875rem;
-  text-decoration: none;
-  transition: 0.4s;
-  padding:  0.625rem;
-  align-items: center;
+a:hover {
+    background-color: #606c38; /* Cambia el color de fondo al pasar el mouse sobre un enlace */
+    color:#fefae0;
 }
-
-li a:hover {
-  background-color: var(--hover-color-opacity);
-  border-radius: 50px;
-  transition: 0.4s;
-}
-
-/* Responsive */
 
 @media (max-width: 768px) {
+    .navbar{
+        display: flex;
+        flex-flow: column;
+        
+    }
   .navbar-menu {
+    width: 100%; /* Asegura que la navbar ocupe el 100% del ancho en pantallas pequeñas */
     display: flex;
-    justify-content: flex-end;
-    width: 100%;
+    justify-content: center;
   }
+  .navbar-menu ul{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    padding-inline-start:0px !important;
+    gap: 10px;
 
-  .nav-item {
-    display: none;
   }
-}
-
+  .navbar{
+    margin-top: 20px;
+  }
+ }
 
 </style>

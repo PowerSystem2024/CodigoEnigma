@@ -1,84 +1,37 @@
-/* Colores globales */
-:root {
-  --white-primary: #fafafa;
-  --white-secondary: #fafafabd;
-  --white-tertiary: #fafafa10;
-  --white-quaternary: #fafafa86;
-  --black-primary: #16171a;
-  --black-secondary: #222429;
-  --black-tertiary: #16171a10;
-  --hover-color-opacity: #ffffff11;
-}
+@import './base.css';
 
-/* Estilos globales */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: var(--black-primary);
-  color: var(--white-primary);
-  font-family: 'Montserrat', sans-serif;
-}
-
-main {
-  margin: 0 100px;
-  padding: 150px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 200px;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Estilos de heading */
-h1 {
-  font-size: 6rem;
-  font-weight: 700;
-  font-family: 'Roboto Mono', monospace;
-}
-
-h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  font-family: 'Roboto Mono', monospace;
-}
-
-h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-h4 {
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-h5 {
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-h6 {
-  font-size: 0.875rem;
-  font-weight: 700;
-}
-
-p {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--white-secondary)
+/*Este estilo lo dejamos*/
+#app {
+  max-width: 1280px; /* Establece el ancho máximo del contenedor en 1280px */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 2rem; /* Añade un relleno interno de 2rem */
+  font-weight: normal; /* Establece el peso de la fuente como normal */
 }
 
 a {
-  color: var(--white-primary);
-  text-decoration: none;
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  color: var(--vt-c-white); /* Establece el color del enlace usando una variable CSS */
 }
+
+
+
+/*Agregaremos esta media query pensando en el responsivo desde ahora por esta regla:*/
+
+@media (max-width: 768px) {
+  #app {
+    display: flex; /* Aplica un diseño flexible al contenedor */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    font-size: small; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+    padding: 0rem; 
+  }
+}
+
+@media (min-width: 1024px) {
+  #app {
+    display: flex; /* Aplica un diseño flexible al contenedor */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    width: 80%; /* Limita el ancho del contenedor al 80% de la pantalla en dispositivos grandes */
+  }
+}
+
+

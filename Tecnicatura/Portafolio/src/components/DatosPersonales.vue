@@ -1,113 +1,87 @@
 <script setup>
-import linkedin from '../assets/icons/ri--linkedin-line.svg'
-import github from '../assets/icons/ri--github-line.svg'
-import instagram from '../assets/icons/ri--instagram-line.svg'
-import twitter from '../assets/icons/ri--twitter-x-fill.svg'
+import linkedin from '/src/assets/linkedin_icon.svg';
+import github from '/src/assets/github_icon.svg';
+import cv from '/src/assets/cv_resume_icon.svg';
 
+
+const title = 'Dilan Ramos';
+const descripcion = 'Alumno de la Tecnicatura en Programación - UTN';
+const residencia = 'San Rafael, Mendoza, Argentina';
+const presentacion = 'Desarrollador web Front-End con cinco años de experiencia en el rubro IT y Marketing Digital. Especialización en desarrollo con CMS y tecnologías que incluyen WordPress, WooCommerce, Shopify, headless CMS, HTML, CSS y JavaScript. Experto en troubleshooting y mejorar la experiencia del usuario y SEO.';
 const redesSociales = [
-  { id: 1, name: 'linkedin', src: linkedin, url: '' },
-  { id: 2, name: 'github', src: github, url: '' },
-  { id: 3, name: 'Instagram', src: instagram, url: '' },
-  { id: 4, name: 'twitter', src: twitter, url: '' },
-]
+  { id: 1, name: 'linkedin', src: linkedin, url: 'https://www.linkedin.com/in/dilanramos' },
+  { id: 2, name: 'github', src: github, url: 'https://github.com/dilancio' },
+  { id: 3, name: 'curriculum', src: cv, url: '/src/assets/CV-Español.pdf' },
+];
+const telefono = '+54 9 1134149330';
 </script>
 
 <template>
   <section class="datos-personales">
-    <article class="title">
-        <h1>&lt;Código Enigma/&gt;</h1>
-      <p>
-        Eliana Dominguez <b>|</b> Arón Rojas <b>|</b> Francisco Elías <b>|</b> Rocío Aguirre Cerullo <b>|</b>
-        Dilan Ramos <b>|</b> Agustín Colombo <b>|</b> Juan Cruz Dicalbo.
-      </p>
-    </article>
-
-    <article class="redes">
+    <div class="card">
+      <h1>{{ title }}</h1>
+      <h2>{{ descripcion }}</h2>
+      <p>{{ presentacion }}</p>
       <ul class="container-lista">
         <li v-for="red in redesSociales" :key="red.id">
-          <a :href="red.url"
-            ><img
-              class="icon-redsocial"
-              :src="red.src"
-              width="35rem"
-              :alt="red.name"
-          /></a>
+          <a :href="red.url"><img class="icon-redsocial" :src="red.src" width="35rem" :alt="red.name"></a>
         </li>
       </ul>
-
-      <button>Descargar CV</button>
-    </article>
+      <h3>☎ {{ telefono }}</h3>
+      <h4>{{ residencia }}</h4>
+    </div>
   </section>
 </template>
 
 <style scoped>
-.datos-personales {
-  padding: 7rem 0;
+
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color:#fefae0;
+}
+
+.card {
+  background-color: #606c38;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+ 
+
+}
+
+.container-lista {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   text-align: center;
 }
 
-.title {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.redes {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-}
-
-ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-li {
-  padding: 0.5rem;
-  border-radius: 50px;
-  border: 1px solid var(--white-quaternary);
-  display: flex;
-  align-items: center;
-}
-
-li:hover {
-  background-color: var(--hover-color-opacity);
-}
-
-a {
-  display: flex;
-  align-items: center;
-}
-
 .icon-redsocial {
-  width: 1.5rem;
+  align-items: center;
+  background-color: aliceblue;
+  border-radius: 50%;
+  padding: 2px;
+  margin: 5px;
+  box-shadow: 0 0 5px rgba(95, 124, 205, 0.934);
 }
 
-span {
-  font-weight: bold;
+.icon-redsocial:hover {
+  background-color: rgb(28, 41, 52);
+  box-shadow: 0 0 5px rgba(251, 249, 249, 0.934);
 }
 
-button {
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  border: 1px solid var(--white-quaternary);
-  background-color: transparent;
-  color: var(--white-primary);
+h3 {
+  font-size: 1.2rem;
   font-weight: 600;
-  cursor: pointer;
-  font-size: 1rem;
 }
 
-button:hover {
-  background-color: var(--white-primary);
-  color: var(--black-primary);
-}
 </style>
